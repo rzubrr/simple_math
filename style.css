@@ -19,6 +19,18 @@ body
     transform: translate(-50%, -50%);
 }
 
+.prob
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 + input
+{
+    margin: 20px;
+}
+
 button
 {
 
@@ -55,7 +67,7 @@ input
     font-size: 25px;
     text-align: center;
     -moz-appearance: textfield;
-    width: 100px;
+    width: 65px;
     height: 30px;
     text-decoration: none;
     border-radius: 10px;
