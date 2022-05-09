@@ -33,7 +33,6 @@ h1 + input
 
 button
 {
-
     display: inline-block;
     outline: 0;
     cursor: pointer;

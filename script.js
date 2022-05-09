@@ -44,6 +44,22 @@ function guess() {
     count++
 }
 
+function compile() {
+    if (count < 4) {
+        guess()
+        randomise()
+    }
+    else {
+        guess()
+        console.log(guesses)
+        console.log(random)
+        div_prob.removeChild(input)
+        div.removeChild(button_submit)
+        h1.innerText=`You've guessed ${guessed} out of 5`
+    }
+}
+
+
 div = document.createElement("div")
 div.classList.add("main")
 div_prob = document.createElement("div")
@@ -72,19 +88,11 @@ button.addEventListener('click', () => {
 })
 
 button_submit.addEventListener('click', () => {
-    if (count < 4) {
-        guess()
-        randomise()
-        div_prob.appendChild(h1)
-        div_prob.appendChild(input)
-        div.appendChild(button_submit)
-    }
-    else {
-        guess()
-        console.log(guesses)
-        console.log(random)
-        div_prob.removeChild(input)
-        div.removeChild(button_submit)
-        h1.innerText=`You've guessed ${guessed} out of 5`
+    compile()
+})
+
+input.addEventListener('keydown', e => {
+    if (e.keyCode == 13) {
+        compile()
     }
 })
