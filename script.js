@@ -37,7 +37,7 @@ function guess() {
     guesses[count] = input.value;
     console.log(guesses)
     console.log("Guessing: " + guesses[count])
-    if (guesses[count] === random[count]) {
+    if (Number(guesses[count]) === random[count]) {
         console.log("GUESSED")
         guessed++
     }
