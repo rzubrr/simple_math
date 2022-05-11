@@ -7,13 +7,13 @@ let y = 0
 let count = 0
 let guessed = 0
 
-function losuj() {
+function rand() {
     return Math.floor(Math.random() * (20 - (-10)) + (-10))
 }
 
 function randomise() {
-    x = losuj()
-    y = losuj()
+    x = rand()
+    y = rand()
     op = Math.floor(Math.random() * 3)
     console.log("Problem nr: " + op)
     if (op == 0) {
@@ -61,16 +61,19 @@ function compile() {
 
 
 div = document.createElement("div")
-div.classList.add("main")
 div_prob = document.createElement("div")
-div_prob.classList.add("prob")
 h1 = document.createElement("h1")
-h1.innerText = "simple math problem generator"
 button = document.createElement("button")
-button.innerText = "START"
 input = document.createElement("input")
-input.type = "number"
 button_submit = document.createElement("button")
+
+div.classList.add("main")
+div_prob.classList.add("prob")
+
+input.type = "number"
+
+h1.innerText = "simple math problem generator"
+button.innerText = "START"
 button_submit.innerText = "NEXT"
 
 cont.appendChild(div_prob)
