@@ -34,7 +34,7 @@ function randomise() {
 }
 
 function guess() {
-    guesses[count] = input.value;
+    guesses[count] = input.value
     console.log(guesses)
     console.log("Guessing: " + guesses[count])
     if (Number(guesses[count]) === random[count]) {
@@ -46,8 +46,11 @@ function guess() {
 
 function compile() {
     if (count < 4) {
-        guess()
-        randomise()
+        if (input.value !== "") {
+            guess()
+            randomise()
+        }
+        else alert("Insert a number")
     }
     else {
         guess()
