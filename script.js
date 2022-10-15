@@ -1,9 +1,6 @@
 const cont = document.querySelector(".container")
 let random = []
 let guesses = []
-let op
-let x = 0
-let y = 0
 let count = 0
 let guessed = 0
 
@@ -12,21 +9,23 @@ function rand() {
 }
 
 function randomise() {
-    x = rand()
-    y = rand()
-    op = Math.floor(Math.random() * 3)
-    console.log("Problem nr: " + op)
+    const x = rand()
+    const y = rand()
+    const op = Math.floor(Math.random() * 3)
     if (op == 0) {
         random[count] = x + y
         h1.innerText = `${x} + ${y} = `
+        console.log("Problem: plus")
     }
     else if (op == 1) {
         random[count] = x - y
         h1.innerText = `${x} - ${y} = `
+        console.log("Problem: minus")
     }
     else {
         random[count] = x * y
         h1.innerText = `${x} * ${y} = `
+        console.log("Problem: multiply")
     }
     console.log("Result = " + random[count])
     console.log(random)
@@ -34,7 +33,7 @@ function randomise() {
 }
 
 function guess() {
-    guesses[count] = input.value;
+    guesses[count] = input.value
     console.log(guesses)
     console.log("Guessing: " + guesses[count])
     if (Number(guesses[count]) === random[count]) {
@@ -46,8 +45,11 @@ function guess() {
 
 function compile() {
     if (count < 4) {
-        guess()
-        randomise()
+        if (input.value !== "") {
+            guess()
+            randomise()
+        }
+        else alert("Insert a number")
     }
     else {
         guess()
@@ -58,7 +60,6 @@ function compile() {
         h1.innerText=`You've guessed ${guessed} out of 5`
     }
 }
-
 
 div = document.createElement("div")
 div_prob = document.createElement("div")
